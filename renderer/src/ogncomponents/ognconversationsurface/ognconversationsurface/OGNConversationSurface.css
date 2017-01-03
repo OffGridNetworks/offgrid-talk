@@ -1,0 +1,12 @@
+.ogn-conversation-surface-background {
+  background-color: #F8F6F3;
+	background-image: url(./../../../../public/imgs/app/background600.png);
+  background-position: bottom left;
+  background-repeat: repeat;
+  width: 100%;
+	height: 100%;
+  position: fixed;
+  top: 0;
+	left: 0;
+  z-index: -200;
+}

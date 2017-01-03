@@ -1,0 +1,83 @@
+.my-chat-bubble {
+	position:relative;
+  padding: 5px 15px;
+	border-radius:15px;
+  margin-top: 3px;
+	margin-bottom: 3px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 10pt;
+	max-width: 60%;
+
+	color:#F8F6F3; 
+	background:#2A91F6;
+	float: right;
+  margin-right: 10px;
+  font-weight: 500;
+	}
+
+.receiver-chat-bubble {
+	position:relative;
+  padding: 5px 15px;
+	border-radius:15px;
+  margin-top: 3px;
+	margin-bottom: 3px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 10pt;
+	max-width: 60%;
+
+	color: #000000;
+	background:#E5E5EA;
+  float: left;
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.my-chat-bubble:before {
+	content:"";
+	position:absolute;
+	bottom: 0px;
+	height:15px;
+	z-index:2;
+	right:-7px;
+	border-right:20px solid #2A91F6;
+	border-bottom-left-radius: 16px 14px;
+	}
+
+.my-chat-bubble:after {
+			content:"";
+	position:absolute;
+	bottom: 0px;
+	height:15px;
+	z-index:3;
+	width:26px;
+	background:#F8F6F3;
+	-webkit-transform:translate(-30px, -2px);
+	transform:translate(-30px, -2px);
+	border-bottom-left-radius: 10px;
+	right:-56px;
+	}
+
+.receiver-chat-bubble:before {
+			content:"";
+	position:absolute;
+	bottom: 0px;
+	height:15px;
+	z-index:2;
+  left:-7px;
+	border-left:20px solid #E5E5EA;
+	border-bottom-right-radius: 16px 14px;
+	}
+
+.receiver-chat-bubble:after {
+			content:"";
+	position:absolute;
+	bottom: 0px;
+	height:15px;
+	z-index:3;
+	width:26px;
+	background:#F8F6F3;
+	-webkit-transform:translate(-30px, -2px);
+	transform:translate(-30px, -2px);
+	border-bottom-right-radius: 10px;
+	left:4px;
+  }

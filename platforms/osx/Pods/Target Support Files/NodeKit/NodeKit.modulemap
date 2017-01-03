@@ -1,0 +1,6 @@
+framework module NodeKit {
+  umbrella header "NodeKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

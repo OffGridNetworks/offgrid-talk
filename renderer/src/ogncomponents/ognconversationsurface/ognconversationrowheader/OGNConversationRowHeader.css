@@ -1,0 +1,9 @@
+.ogn-conversation-row-header {
+	clear: both;
+  margin-top: 3px;
+	margin-bottom: 3px;
+	position: relative;
+	width: auto;
+	max-width: 100%;
+	padding-top: 3px;
+}

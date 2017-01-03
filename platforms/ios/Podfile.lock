@@ -1,0 +1,20 @@
+PODS:
+  - NodeKit (0.8.1):
+    - NodeKit/NKCore (= 0.8.1)
+    - NodeKit/NKElectro (= 0.8.1)
+    - NodeKit/NKScripting (= 0.8.1)
+  - NodeKit/NKCore (0.8.1):
+    - NodeKit/NKScripting
+  - NodeKit/NKElectro (0.8.1):
+    - NodeKit/NKScripting
+  - NodeKit/NKScripting (0.8.1)
+
+DEPENDENCIES:
+  - NodeKit (>= 0.8.1)
+
+SPEC CHECKSUMS:
+  NodeKit: c3530fa52c7916b437bbed79a9821613ba56d28d
+
+PODFILE CHECKSUM: 793339bbe2b694b1a56db91df7ab459fadd369a0
+
+COCOAPODS: 1.0.1

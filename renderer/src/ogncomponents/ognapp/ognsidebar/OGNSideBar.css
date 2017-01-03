@@ -1,0 +1,109 @@
+/* ogn-sidebar Menu - Background */
+.ogn-sidebar {
+  /* critical sizing and position styles */
+  width: 0;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1201;
+  overflow-x: hidden;
+  transition: 0.5s;
+  
+  /* non-critical appearance styles */
+  list-style: none;
+  background: #E8E8E8;
+}
+
+.ogn-sidebar-content {
+  top: 30px;
+  position: relative;
+}
+
+/* Hamburger Button */
+.ogn-sidebar-hamburger {
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label[for="ogn-sidebar-hamburger"] {
+  /* critical positioning styles */
+  position: fixed;
+  left: 15px; top: 30px;
+  z-index: 2;
+  
+  /* non-critical apperance styles */
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='20px' height='20px' viewBox='0 0 20 20' enable-background='new 0 0 20 20' xml:space='preserve'><rect width='20' height='4' fill='#F8F6F3' /><rect y='16' width='20' height='4' fill='#FFFFFF'/><rect y='8' width='20' height='4' fill='#F8F6F3'/></svg>");
+  background-size: contain;
+}
+
+.ogn-sidebar-hamburger:checked ~ .ogn-sidebar {
+  width: 300px;
+}
+
+/* Close Button */
+.ogn-sidebar-close {
+    /* critical positioning styles */
+  position: absolute;
+  right: 15px; top: 30px;
+  z-index: 2;
+
+  width: 16px;
+  height: 15px;
+  opacity: 0.3;
+}
+.ogn-sidebar-close:hover {
+  opacity: 1;
+}
+.ogn-sidebar-close:before, .ogn-sidebar-close:after {
+  position: absolute;
+  left: 7px;
+  content: ' ';
+  height: 17px;
+  width: 2px;
+  background-color: black;
+}
+.ogn-sidebar-close:before {
+  transform: rotate(45deg);
+}
+.ogn-sidebar-close:after {
+  transform: rotate(-45deg);
+}
+
+body {
+	/* Without this, the body has excess horizontal scroll when the menu is open */
+  overflow-x: hidden;
+}
+
+/* Sidebar Items */
+.ogn-sidebar-item {
+  /* non-critical appearance styles */
+  border-bottom: 0.2px solid #CFCFCF;
+
+}
+
+.ogn-sidebar-item a {
+  /* non-critical appearance styles */
+  border-top: 0.2px solid #CFCFCF;
+  display: block;
+    padding: 1em;
+
+  background: linear-gradient(135deg, rgba(232,232,232,0) 0%,rgba(232,232,232,0.65) 100%);
+  color: black;
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: color 0.2s, background 0.5s;
+}
+
+.ogn-sidebar-item a:hover {
+  color: #2A91F6;
+  background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(42,145,246,0.65) 100%);
+}
+
+/* Micro reset */
+*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;}
+html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }

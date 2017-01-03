@@ -1,0 +1,14 @@
+.ogn-app-bar {
+  background-color: #2A91F6;
+  height: 30px;
+  padding: 5px;
+  color: #F8F6F3;
+  width: 100%;
+  position: fixed;
+  top: 0;
+	z-index: 100;
+}
+
+.ogn-app-bar-logo {
+   height: 30px;
+}
