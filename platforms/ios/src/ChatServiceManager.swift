@@ -18,6 +18,12 @@
 
 import Foundation
 import MultipeerConnectivity
+import NodeKit
+
+
+@objc public protocol ChatServiceManagerProtocol : NKScriptExport {
+    func sendMessage(msg: String)
+}
 
 class ChatServiceManager : NSObject {
     
@@ -25,11 +31,11 @@ class ChatServiceManager : NSObject {
     // and can contain only ASCII lowercase letters, numbers and hyphens.
     private let ChatServiceType = "offgrid-chat"
     
-    private let myPeerId = MCPeerID(displayName: "Guy")
+    private let myPeerId = MCPeerID(displayName: "iOS")
     private let serviceAdvertiser : MCNearbyServiceAdvertiser
     private let serviceBrowser : MCNearbyServiceBrowser
     
-    lazy var session : MCSession = {
+    private lazy var session : MCSession = {
         let session = MCSession(peer: self.myPeerId, securityIdentity: nil, encryptionPreference: MCEncryptionPreference.Required)
         session.delegate = self
         return session
@@ -39,16 +45,16 @@ class ChatServiceManager : NSObject {
         self.serviceAdvertiser = MCNearbyServiceAdvertiser(peer: myPeerId, discoveryInfo: nil, serviceType: ChatServiceType)
         self.serviceBrowser = MCNearbyServiceBrowser(peer: myPeerId, serviceType: ChatServiceType)
         super.init()
-        self.serviceAdvertiser.delegate = self
-        self.serviceAdvertiser.startAdvertisingPeer()
-        self.serviceBrowser.delegate = self
-        self.serviceBrowser.startBrowsingForPeers()
+   //     self.serviceAdvertiser.delegate = self
+    //    self.serviceAdvertiser.startAdvertisingPeer()
+             self.serviceBrowser.delegate = self
+            self.serviceBrowser.startBrowsingForPeers()
         
     }
     
     deinit {
-        self.serviceAdvertiser.stopAdvertisingPeer()
-        self.serviceBrowser.stopBrowsingForPeers()
+     //   self.serviceAdvertiser.stopAdvertisingPeer()
+            self.serviceBrowser.stopBrowsingForPeers()
     }
     
 }
@@ -119,6 +125,8 @@ extension ChatServiceManager : MCSessionDelegate {
     func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID)
     {
         NSLog("%@", "didReceiveData: \(data)")
+        
+        self.emitRecv(data, fromPeer: peerID)
     }
     
     // Received a byte stream from remote peer.
@@ -140,4 +148,65 @@ extension ChatServiceManager : MCSessionDelegate {
     {
         NSLog("%@", "didStartReceivingResourceWithName")
     }
+    
+    // Made first contact with peer and have identity information about the
+    // remote peer (certificate may be nil).
+    func session(session: MCSession, didReceiveCertificate certificate: [AnyObject]?, fromPeer peerID: MCPeerID, certificateHandler: (Bool) -> Void)
+    {
+        certificateHandler(true);
+    }
+    
+}
+
+extension ChatServiceManager: ChatServiceManagerProtocol {
+    
+    // PUBLIC METHODS, ACCESSIBLE FROM JAVASCRIPT
+    func sendMessage(msg: String) {
+        
+        let msgData = msg.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        
+        do {
+            try self.session.sendData(msgData!, toPeers: self.session.connectedPeers,
+                                      withMode: MCSessionSendDataMode.Unreliable)
+        } catch {
+            print("error sending \(msg)")
+        }
+        
+    }
+    
+    // PRIVATE METHODS
+    
+    private func emitRecv(data: NSData!, fromPeer PeerID: MCPeerID) {
+        
+        let onMainThread = { () -> Void in
+            
+            let peerName = PeerID.displayName
+            
+            guard let msg = String(data: data, encoding: NSUTF8StringEncoding) else {return }
+            
+            NSLog(msg);
+            
+            self.NKscriptObject?.invokeMethod("emit", withArguments:["recv", msg, peerName ], completionHandler: nil)
+            
+        }
+        
+        if (NSThread.isMainThread()) {
+            
+            onMainThread()
+            
+        } else {
+            
+            dispatch_async(dispatch_get_main_queue(), onMainThread)
+            
+        }
+        
+        
+    }
+    
+    // CONFIG METHODS
+    
+    func attachTo(context: NKScriptContext) {
+        context.loadPlugin(self, namespace: "com.offgridn.chat", options: [String:AnyObject]())
+    }
+    
 }

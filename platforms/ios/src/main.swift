@@ -21,9 +21,19 @@ import NodeKit
 
 class myNKDelegate: NSObject, NKScriptContextDelegate {
     
+    var chatService : ChatServiceManager
+    
+    override init () {
+        chatService = ChatServiceManager();
+        super.init()
+    }
+    
     func NKScriptEngineDidLoad(context: NKScriptContext) -> Void {
+        
+        chatService.attachTo(context)
+        
         // NodeKit.attachTo(context)
-        context.injectJavaScript(NKScriptSource(source: "process.bootstrap('app/index.js');", asFilename: "boot"))
+        // context.injectJavaScript(NKScriptSource(source: "process.bootstrap('app/index.js');", asFilename: "boot"))
     }
     
     func NKScriptEngineReady(context: NKScriptContext) -> Void {
@@ -36,11 +46,11 @@ NSUserDefaults.standardUserDefaults().setBool(true, forKey: "WebKitDeveloperExtr
 NSUserDefaults.standardUserDefaults().setBool(true, forKey: "WebKitStoreWebDataForBackup")
 NSUserDefaults.standardUserDefaults().synchronize()
 
-// let colorService = ChatServiceManager()
 
 NKElectroHost.start([
+    "nk.allowCustomProtocol": false,
     "nk.NoSplash": true,
     "nk.NoTaskBar": true,
+    "preloadURL": "renderer://localhost/index.html",
     "Engine" : NKEngineType.JavaScriptCore.rawValue
     ], delegate: myNKDelegate() )
-

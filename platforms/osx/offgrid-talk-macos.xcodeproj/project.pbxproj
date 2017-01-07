@@ -11,7 +11,6 @@
 		E44A63A81E1BE29900FF116D /* ChatServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A63A31E1BE29900FF116D /* ChatServiceManager.swift */; };
 		E44A63A91E1BE29900FF116D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A63A41E1BE29900FF116D /* main.swift */; };
 		E44A63AA1E1BE29900FF116D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E44A63A51E1BE29900FF116D /* Assets.xcassets */; };
-		E44A63AF1E1BE47800FF116D /* app in Resources */ = {isa = PBXBuildFile; fileRef = E44A63AE1E1BE47800FF116D /* app */; };
 		E44A63B41E1BE5B100FF116D /* renderer.nkar in Resources */ = {isa = PBXBuildFile; fileRef = E44A63B31E1BE5B100FF116D /* renderer.nkar */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +24,6 @@
 		E44A63A51E1BE29900FF116D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = src/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		E44A63A61E1BE29900FF116D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = src/Info.plist; sourceTree = SOURCE_ROOT; };
 		E44A63AC1E1BE34600FF116D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E44A63AE1E1BE47800FF116D /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app; path = ../../app; sourceTree = "<group>"; };
 		E44A63B01E1BE48C00FF116D /* renderer */ = {isa = PBXFileReference; lastKnownFileType = folder; name = renderer; path = ../../renderer; sourceTree = "<group>"; };
 		E44A63B31E1BE5B100FF116D /* renderer.nkar */ = {isa = PBXFileReference; lastKnownFileType = file; name = renderer.nkar; path = ../../renderer/renderer.nkar; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				E44A63B31E1BE5B100FF116D /* renderer.nkar */,
-				E44A63AE1E1BE47800FF116D /* app */,
 				E44A63B01E1BE48C00FF116D /* renderer */,
 				E44A63AC1E1BE34600FF116D /* Podfile */,
 				E44A638B1E1BE18500FF116D /* src */,
@@ -158,7 +155,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E44A63B41E1BE5B100FF116D /* renderer.nkar in Resources */,
-				E44A63AF1E1BE47800FF116D /* app in Resources */,
 				E44A63AA1E1BE29900FF116D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B82A4632A1B3CA10674BECC /* Pods-offgrid-talk-macos.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -338,6 +335,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 71FB16DE53184BC145085127 /* Pods-offgrid-talk-macos.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
