@@ -31,15 +31,19 @@ class NKEAppDelegate: UIResponder, UIApplicationDelegate, NKScriptContextDelegat
     internal static var delegate: NKScriptContextDelegate?
 
     private var splashWindow: NKE_BrowserWindow?
+    
+    private var _viewController: UIViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        _viewController =  UIViewController()
     
-        window?.rootViewController = UIViewController()
+        window?.rootViewController = _viewController
 
         window?.makeKeyAndVisible()
-
+        
        _nodekit = NKElectroHost()
         
         var options = NKEAppDelegate.options ?? Dictionary<String, AnyObject>()
@@ -47,7 +51,7 @@ class NKEAppDelegate: UIResponder, UIApplicationDelegate, NKScriptContextDelegat
         _nodekit!.start(&options, delegate: self)
        
         NKEventEmitter.global.emit("nk.ApplicationDidFinishLaunching", ())
-        
+    
         return true
     
     }
@@ -93,7 +97,97 @@ class NKEAppDelegate: UIResponder, UIApplicationDelegate, NKScriptContextDelegat
         NKEAppDelegate.delegate?.NKScriptEngineReady(context)
     
     }
+   
 
 }
 
 #endif
+/*
+class NKEViewController: UIViewController {
+    
+    deinit {
+      //   NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+     //   NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
+ 
+    func keyboardWillShow(notification:NSNotification) -> Void {
+        let delayInSeconds:Double = 0.1
+        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * (Double)(NSEC_PER_SEC)))
+        dispatch_after(popTime, dispatch_get_main_queue()) {
+            self.hideKeyBoard()
+        }
+    }
+    
+    
+
+
+
+    func hideKeyBoard() -> Void {
+        
+        for window in UIApplication.sharedApplication().windows {
+            if !window.isMemberOfClass(UIWindow.self) {
+                let keyboardWindow = window
+                if #available(iOS 9.0, *) {
+                    self.removeAccessoryBarForiOS8910(keyboardWindow as UIView)
+                } else if #available(iOS 8.0, *) {
+                    self.removeAccessoryBarForiOS8910(keyboardWindow as UIView)
+                } else {
+                    self.removeAccessoryBarForiOS7(keyboardWindow as UIView)
+                }
+            }
+        }
+    }
+    
+    func removeAccessoryBarForiOS8910(keyboardWindow:UIView) -> Void {
+        for possibleFormView:UIView in keyboardWindow.subviews {
+            if possibleFormView.isMemberOfClass(NSClassFromString("UIInputSetContainerView")!) {
+                for subviewOfInputSetContainerView in possibleFormView.subviews {
+                    if subviewOfInputSetContainerView.isMemberOfClass(NSClassFromString("UIInputSetHostView")!) {
+                        for subviewOfInputSetHostView in subviewOfInputSetContainerView.subviews {
+                            if subviewOfInputSetHostView.isMemberOfClass(NSClassFromString("UIWebFormAccessory")!) {
+                                subviewOfInputSetHostView.layer.opacity = 0
+                                subviewOfInputSetHostView.frame = CGRectZero
+                            }
+                            else if subviewOfInputSetHostView.isMemberOfClass(NSClassFromString("UIKBInputBackdropView")!) && subviewOfInputSetHostView.frame.size.height < 100 {
+                                subviewOfInputSetHostView.layer.opacity = 0
+                                subviewOfInputSetHostView.userInteractionEnabled = false
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func removeAccessoryBarForiOS7(keyboardWindow:UIView) -> Void {
+        for possibleFormView:UIView in keyboardWindow.subviews {
+            if possibleFormView.isMemberOfClass(NSClassFromString("UIPeripheralHostView")!) {
+                for subviewOfPeripheralHostView in possibleFormView.subviews {
+                    if subviewOfPeripheralHostView.isMemberOfClass(NSClassFromString("UIWebFormAccessory")!) {
+                        subviewOfPeripheralHostView.layer.opacity = 0
+                        subviewOfPeripheralHostView.frame = CGRectZero
+                    }
+                     else if subviewOfPeripheralHostView.isMemberOfClass(NSClassFromString("UIKBInputBackdropView")!) && subviewOfPeripheralHostView.frame.size.height < 100 {
+                        subviewOfPeripheralHostView.layer.opacity = 0
+                        subviewOfPeripheralHostView.userInteractionEnabled = false
+                    }
+                }
+            }
+        }
+    }
+ 
+ 
+    
+}
+ */

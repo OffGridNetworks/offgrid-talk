@@ -23,7 +23,7 @@ class OGSideBar extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id={'hamburger' + this.props.store.uistate.screenSize.width}>
                 <input type="checkbox" id="ogn-sidebar-hamburger" className="ogn-sidebar-hamburger" onChange={this.handleClose.bind(this)} checked={this.state.sidebaropen} />
                 <label htmlFor="ogn-sidebar-hamburger"></label>
                 <div className="ogn-sidebar">

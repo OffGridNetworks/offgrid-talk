@@ -6,9 +6,11 @@
 */
 
 import MessagesStore from './messages';
+import UIStateStore from './uistate';
 
 const store = {
-  messages: MessagesStore
+  messages: MessagesStore,
+  uistate: UIStateStore
 };
 
 

@@ -13,6 +13,7 @@ import './OGNConversationScroller.css';
 class OGNConversationScroller extends React.Component {
 
   scrollWindow() {
+    console.log("RESIZE");
     window.scrollTo(0, document.body.scrollHeight);
   }
 
