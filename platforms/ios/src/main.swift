@@ -51,6 +51,6 @@ NKElectroHost.start([
     "nk.allowCustomProtocol": false,
     "nk.NoSplash": true,
     "nk.NoTaskBar": true,
-    "preloadURL": "renderer://localhost/index.html",
+    "preloadURL": "app://localhost/index.html",
     "Engine" : NKEngineType.JavaScriptCore.rawValue
     ], delegate: myNKDelegate() )

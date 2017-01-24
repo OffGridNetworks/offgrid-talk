@@ -8,27 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		BEAAB49E2C1D3BCF4996EB5D /* Pods_offgrid_talk_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A30CDB02020BFADE6FA4D9 /* Pods_offgrid_talk_ios.framework */; };
+		E4316BBE1E36EC3600A32FCD /* app.nkar in Resources */ = {isa = PBXBuildFile; fileRef = E4316BBD1E36EC3500A32FCD /* app.nkar */; };
 		E44A636B1E1BD6BD00FF116D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E44A63641E1BD6BD00FF116D /* Assets.xcassets */; };
 		E44A636C1E1BD6BD00FF116D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E44A63651E1BD6BD00FF116D /* LaunchScreen.storyboard */; };
 		E44A636D1E1BD6BD00FF116D /* ChatServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A63671E1BD6BD00FF116D /* ChatServiceManager.swift */; };
 		E44A63701E1BD6BD00FF116D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A636A1E1BD6BD00FF116D /* main.swift */; };
-		E44A63B61E1BE5F400FF116D /* renderer.nkar in Resources */ = {isa = PBXBuildFile; fileRef = E44A63B51E1BE5F300FF116D /* renderer.nkar */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2B783B7718CCDD99946F6046 /* Pods-offgrid-talk-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-offgrid-talk-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-offgrid-talk-ios/Pods-offgrid-talk-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		2DC9380D6EBEE51F1A883FE5 /* Pods-offgrid-talk-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-offgrid-talk-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-offgrid-talk-ios/Pods-offgrid-talk-ios.release.xcconfig"; sourceTree = "<group>"; };
 		39A30CDB02020BFADE6FA4D9 /* Pods_offgrid_talk_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_offgrid_talk_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4316BBC1E36EC1F00A32FCD /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app; path = ../../app; sourceTree = "<group>"; };
+		E4316BBD1E36EC3500A32FCD /* app.nkar */ = {isa = PBXFileReference; lastKnownFileType = file; name = app.nkar; path = ../../app/app.nkar; sourceTree = "<group>"; };
 		E44A634C1E1BD61B00FF116D /* offgrid-talk-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "offgrid-talk-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44A63641E1BD6BD00FF116D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E44A63661E1BD6BD00FF116D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E44A63671E1BD6BD00FF116D /* ChatServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatServiceManager.swift; sourceTree = "<group>"; };
 		E44A63681E1BD6BD00FF116D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E44A636A1E1BD6BD00FF116D /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		E44A63731E1BD82400FF116D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		E44A63771E1BD9A000FF116D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E44A637F1E1BE0B800FF116D /* renderer */ = {isa = PBXFileReference; lastKnownFileType = folder; name = renderer; path = ../../renderer; sourceTree = "<group>"; };
-		E44A63B51E1BE5F300FF116D /* renderer.nkar */ = {isa = PBXFileReference; lastKnownFileType = file; name = renderer.nkar; path = ../../renderer/renderer.nkar; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +62,8 @@
 		E44A63431E1BD61A00FF116D = {
 			isa = PBXGroup;
 			children = (
-				E44A63B51E1BE5F300FF116D /* renderer.nkar */,
-				E44A637F1E1BE0B800FF116D /* renderer */,
+				E4316BBD1E36EC3500A32FCD /* app.nkar */,
+				E4316BBC1E36EC1F00A32FCD /* app */,
 				E44A63631E1BD6BD00FF116D /* src */,
 				E44A634D1E1BD61B00FF116D /* Products */,
 				4537D555D3EBD512EBEADB43 /* Pods */,
@@ -97,7 +96,6 @@
 				E44A63681E1BD6BD00FF116D /* Info.plist */,
 				E44A63651E1BD6BD00FF116D /* LaunchScreen.storyboard */,
 				E44A63641E1BD6BD00FF116D /* Assets.xcassets */,
-				E44A63731E1BD82400FF116D /* Default-568h@2x.png */,
 			);
 			name = "platform-ios";
 			sourceTree = "<group>";
@@ -166,8 +164,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E44A636B1E1BD6BD00FF116D /* Assets.xcassets in Resources */,
-				E44A63B61E1BE5F400FF116D /* renderer.nkar in Resources */,
 				E44A636C1E1BD6BD00FF116D /* LaunchScreen.storyboard in Resources */,
+				E4316BBE1E36EC3600A32FCD /* app.nkar in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +214,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

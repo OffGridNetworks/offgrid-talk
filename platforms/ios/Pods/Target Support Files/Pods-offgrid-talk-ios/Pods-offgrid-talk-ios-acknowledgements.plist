@@ -216,6 +216,8 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 </string>
+			<key>License</key>
+			<string>APACHE-2</string>
 			<key>Title</key>
 			<string>NodeKit</string>
 			<key>Type</key>

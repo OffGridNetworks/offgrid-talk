@@ -43,12 +43,6 @@ class NKE_BrowserWindow: NSObject {
     
     internal var _webContents: NKE_WebContentsBase? = nil
     
-    internal var _accessoryBarHeight : CGFloat = 44
-    
-    internal var _recognizer : AnyObject? = nil
-    
-    internal var _keyboardIsVisible: Bool = false
-    
     override init() {
         
         super.init()
@@ -63,8 +57,9 @@ class NKE_BrowserWindow: NSObject {
         
         // PARSE & STORE OPTIONS
         
-        self._options["nk.InstallElectro"] = options["nk.InstallElectro"] as? Bool ?? true
+        NSLog("BROWSERWINDOW");
         
+        self._options["nk.InstallElectro"] = options["nk.InstallElectro"] as? Bool ?? true
         self._options["nk.ScriptContextDelegate"] = options["nk.ScriptContextDelegate"] as? NKScriptContextDelegate
         
         let allowCustomProtocol: Bool = options[NKEBrowserOptions.nkAllowCustomProtocol] as? Bool ?? false
@@ -102,21 +97,6 @@ class NKE_BrowserWindow: NSObject {
         }
         
         NKE_BrowserWindow._windowArray[self._id] = self
-    }
-    
-    deinit {
-        
-        switch self._browserType {
-            
-        case .WKWebView:
-            
-            deinitUIWebView()
-            
-        case .UIWebView:
-            
-            deinitWKWebView()
-        }
-        
     }
     
     // class functions (for Swift/Objective-C use only, equivalent functions exist in .js helper )

@@ -23,13 +23,7 @@ import Foundation
 import WebKit
 
 extension NKE_BrowserWindow: WebUIDelegate {
-    
-    internal func deinitUIWebView() {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillChangeFrameNotification, object: nil)
-    }
-    
+
     internal func UIScriptEnvironmentReady() -> Void {
    
         (self._webView as! WebView).frameLoadDelegate = self

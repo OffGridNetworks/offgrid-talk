@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CAEBE15F09E6B947F672833B9B3A9AB9"
+               BlueprintIdentifier = "857C5E305BC18DD94C03B6FC5E698227"
                BuildableName = "Pods_offgrid_talk_ios.framework"
                BlueprintName = "Pods-offgrid-talk-ios"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CAEBE15F09E6B947F672833B9B3A9AB9"
+            BlueprintIdentifier = "857C5E305BC18DD94C03B6FC5E698227"
             BuildableName = "Pods_offgrid_talk_ios.framework"
             BlueprintName = "Pods-offgrid-talk-ios"
             ReferencedContainer = "container:Pods.xcodeproj">

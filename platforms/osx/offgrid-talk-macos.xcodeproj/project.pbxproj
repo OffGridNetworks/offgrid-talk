@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		9ADF0AE2BC89B6D4F7F739FF /* Pods_offgrid_talk_macos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0956A7CC25D9B5123105E325 /* Pods_offgrid_talk_macos.framework */; };
+		E4316BBB1E36EBB800A32FCD /* app.nkar in Resources */ = {isa = PBXBuildFile; fileRef = E4316BBA1E36EBB700A32FCD /* app.nkar */; };
 		E44A63A81E1BE29900FF116D /* ChatServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A63A31E1BE29900FF116D /* ChatServiceManager.swift */; };
 		E44A63A91E1BE29900FF116D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A63A41E1BE29900FF116D /* main.swift */; };
 		E44A63AA1E1BE29900FF116D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E44A63A51E1BE29900FF116D /* Assets.xcassets */; };
-		E44A63B41E1BE5B100FF116D /* renderer.nkar in Resources */ = {isa = PBXBuildFile; fileRef = E44A63B31E1BE5B100FF116D /* renderer.nkar */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0956A7CC25D9B5123105E325 /* Pods_offgrid_talk_macos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_offgrid_talk_macos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B82A4632A1B3CA10674BECC /* Pods-offgrid-talk-macos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-offgrid-talk-macos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-offgrid-talk-macos/Pods-offgrid-talk-macos.debug.xcconfig"; sourceTree = "<group>"; };
 		71FB16DE53184BC145085127 /* Pods-offgrid-talk-macos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-offgrid-talk-macos.release.xcconfig"; path = "Pods/Target Support Files/Pods-offgrid-talk-macos/Pods-offgrid-talk-macos.release.xcconfig"; sourceTree = "<group>"; };
+		E4316BBA1E36EBB700A32FCD /* app.nkar */ = {isa = PBXFileReference; lastKnownFileType = file; name = app.nkar; path = ../../app/app.nkar; sourceTree = "<group>"; };
 		E44A63891E1BE18500FF116D /* offgrid-talk-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "offgrid-talk-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44A63A31E1BE29900FF116D /* ChatServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatServiceManager.swift; path = src/ChatServiceManager.swift; sourceTree = SOURCE_ROOT; };
 		E44A63A41E1BE29900FF116D /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = src/main.swift; sourceTree = SOURCE_ROOT; };
 		E44A63A51E1BE29900FF116D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = src/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		E44A63A61E1BE29900FF116D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = src/Info.plist; sourceTree = SOURCE_ROOT; };
 		E44A63AC1E1BE34600FF116D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E44A63B01E1BE48C00FF116D /* renderer */ = {isa = PBXFileReference; lastKnownFileType = folder; name = renderer; path = ../../renderer; sourceTree = "<group>"; };
-		E44A63B31E1BE5B100FF116D /* renderer.nkar */ = {isa = PBXFileReference; lastKnownFileType = file; name = renderer.nkar; path = ../../renderer/renderer.nkar; sourceTree = "<group>"; };
+		E44A63B01E1BE48C00FF116D /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app; path = ../../app; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +60,8 @@
 		E44A63801E1BE18500FF116D = {
 			isa = PBXGroup;
 			children = (
-				E44A63B31E1BE5B100FF116D /* renderer.nkar */,
-				E44A63B01E1BE48C00FF116D /* renderer */,
+				E4316BBA1E36EBB700A32FCD /* app.nkar */,
+				E44A63B01E1BE48C00FF116D /* app */,
 				E44A63AC1E1BE34600FF116D /* Podfile */,
 				E44A638B1E1BE18500FF116D /* src */,
 				E44A638A1E1BE18500FF116D /* Products */,
@@ -154,8 +154,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E44A63B41E1BE5B100FF116D /* renderer.nkar in Resources */,
 				E44A63AA1E1BE29900FF116D /* Assets.xcassets in Resources */,
+				E4316BBB1E36EBB800A32FCD /* app.nkar in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +189,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D55FC5BE5AA591BF74DA6DFE /* [CP] Copy Pods Resources */ = {
@@ -268,6 +268,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -309,6 +310,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

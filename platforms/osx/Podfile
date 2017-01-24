@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'offgrid-talk-macos' do
-    pod 'NodeKit', '>= 0.8.1'
+    pod 'NodeKit', '>= 0.8.9'
 end
 
 post_install do |installer|

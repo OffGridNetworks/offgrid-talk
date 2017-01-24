@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && cd build && rm -f ../renderer.nkar && zip -r ../renderer.nkar .",
+    "build": "react-scripts build && cd build && rm -f ../app.nkar && zip -r ../app.nkar .",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

@@ -1,20 +1,20 @@
 PODS:
-  - NodeKit (0.8.1):
-    - NodeKit/NKCore (= 0.8.1)
-    - NodeKit/NKElectro (= 0.8.1)
-    - NodeKit/NKScripting (= 0.8.1)
-  - NodeKit/NKCore (0.8.1):
+  - NodeKit (0.8.10):
+    - NodeKit/NKCore (= 0.8.10)
+    - NodeKit/NKElectro (= 0.8.10)
+    - NodeKit/NKScripting (= 0.8.10)
+  - NodeKit/NKCore (0.8.10):
     - NodeKit/NKScripting
-  - NodeKit/NKElectro (0.8.1):
+  - NodeKit/NKElectro (0.8.10):
     - NodeKit/NKScripting
-  - NodeKit/NKScripting (0.8.1)
+  - NodeKit/NKScripting (0.8.10)
 
 DEPENDENCIES:
   - NodeKit (>= 0.8.1)
 
 SPEC CHECKSUMS:
-  NodeKit: c3530fa52c7916b437bbed79a9821613ba56d28d
+  NodeKit: 86ea5437263a86e38fb1d9af9f4aa80567427a02
 
 PODFILE CHECKSUM: 793339bbe2b694b1a56db91df7ab459fadd369a0
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1
